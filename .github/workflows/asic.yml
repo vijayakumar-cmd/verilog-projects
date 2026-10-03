@@ -15,6 +15,8 @@ jobs:
           python-version: '3.11'
       - name: install
         run: pip install librelane gdstk matplotlib
+      - name: show config
+        run: cat librelane_config.json
       - name: run flow
         run: script -qec "python3 -m librelane --dockerized --pdk-root $HOME/.ciel librelane_config.json" /dev/null
       - name: collect
@@ -22,7 +24,10 @@ jobs:
         run: |
           mkdir -p results
           python3 - <<'PY'
-          import glob, json, os, io
+          import glob, json, os, io, re
+          ansi = re.compile(r"\x1b\[[0-9;?]*[A-Za-z]|\x1b\]8;[^\x1b]*\x1b\\")
+          def clean(t):
+              return ansi.sub("", t)
           runs = sorted(glob.glob("runs/*"), key=os.path.getmtime)
           out = ["# ASIC result", ""]
           if not runs:
@@ -30,17 +35,35 @@ jobs:
           else:
               r = runs[-1]
               out.append("run: " + os.path.basename(r))
+              # lint messages (the real reason for 'Lint errors found')
+              lint = []
+              for lf in glob.glob(r + "/*lint*/*.log") + glob.glob(r + "/*/*lint*.log"):
+                  for ln in clean(open(lf, errors="ignore").read()).splitlines():
+                      if "%Error" in ln or "%Warning" in ln:
+                          lint.append(ln.strip())
+              if lint:
+                  out.append("")
+                  out.append("## Lint messages")
+                  out.extend(lint[:30])
               mp = r + "/final/metrics.json"
               if os.path.exists(mp):
                   m = json.load(open(mp))
                   keys = ("area", "utilization", "timing__setup__ws", "timing__hold__ws",
                           "setup_vio", "hold_vio", "power__total", "drc", "lvs",
                           "instance__count", "wirelength")
+                  out.append("")
+                  out.append("## Metrics")
                   for k in sorted(m):
                       if any(s in k for s in keys):
                           out.append("%s = %s" % (k, m[k]))
               else:
+                  out.append("")
                   out.append("no final metrics: the flow stopped early")
+                  fl = r + "/flow.log"
+                  if os.path.exists(fl):
+                      out.append("")
+                      out.append("## Last lines of flow.log")
+                      out.extend(clean(open(fl, errors="ignore").read()).splitlines()[-40:])
               g = glob.glob(r + "/final/gds/*.gds")
               if g:
                   try:
@@ -72,6 +95,7 @@ jobs:
                       out.append("layout image failed: %s" % e)
           open("results/summary.md", "w").write("\n".join(out) + "\n")
           PY
+          cat results/summary.md
       - uses: actions/upload-artifact@v4
         if: always()
         with:
