@@ -1,5 +1,5 @@
 {
-  "DESIGN_NAME": "abc",
+  "DESIGN_NAME": "vv",
   "VERILOG_FILES": ["dir::learn/08_comparator/comp4.v"],
   "CLOCK_PORT": null,
   "CLOCK_PERIOD": 10
