@@ -176,4 +176,4 @@ jobs:
           git add -A results
           git commit -m "asic results" || true
           git pull --rebase origin main || true
-          git push || true
+          git push || true 
