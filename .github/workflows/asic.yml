@@ -32,7 +32,19 @@ jobs:
       - name: show config
         run: cat librelane_config.json
       - name: run flow
-        run: script -qec "python3 -m librelane --dockerized --pdk-root $HOME/.ciel librelane_config.json" /dev/null
+        run: |
+          set +e
+          script -qec "python3 -m librelane --dockerized --pdk-root $HOME/.ciel librelane_config.json" /dev/null | tee flow_out.txt
+          rc=${PIPESTATUS[0]}
+          if [ $rc -ne 0 ] && grep -q "PDN-0185" flow_out.txt; then
+            echo "design too small for the power grid, retrying with a 60 x 60 um die"
+            python3 -c 'import json; c=json.load(open("librelane_config.json")); c["FP_SIZING"]="absolute"; c["DIE_AREA"]=[0,0,60,60]; json.dump(c, open("librelane_config.json","w"), indent=2)'
+            cat librelane_config.json
+            rm -rf runs
+            script -qec "python3 -m librelane --dockerized --pdk-root $HOME/.ciel librelane_config.json" /dev/null
+            rc=$?
+          fi
+          exit $rc
       - name: collect
         if: always()
         run: |
@@ -176,4 +188,4 @@ jobs:
           git add -A results
           git commit -m "asic results" || true
           git pull --rebase origin main || true
-          git push || true 
+          git push || true
