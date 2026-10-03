@@ -15,7 +15,7 @@ jobs:
           python-version: '3.11'
       - name: install
         run: pip install librelane gdstk matplotlib
-- name: run flow
+      - name: run flow
         run: python3 -m librelane --dockerized --docker-no-tty --pdk-root $HOME/.ciel librelane_config.json
       - name: collect
         if: always()
