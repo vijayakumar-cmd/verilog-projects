@@ -1,47 +1,94 @@
 # ASIC result
 
-run: RUN_2026-10-03_20-19-36
+run: RUN_2026-10-03_20-44-38
 
-no final metrics: the flow stopped early
-
-## Last lines of flow.log
-Skipping corner max_ff_n40C_1v95 for STA (identical to nom_ff_n40C_1v95 at this stage)…
-Finished STA for the nom_tt_025C_1v80 timing corner.
-Finished STA for the nom_ss_100C_1v60 timing corner.
-Finished STA for the nom_ff_n40C_1v95 timing corner.
-Running 'OpenROAD.Floorplan' at 'runs/RUN_2026-10-03_20-19-36/09-openroad-floorplan'…
-Logging subprocess to [repr.filename]'runs/RUN_2026-10-03_20-19-36/09-openroad-floorplan/openroad-floorplan.log'[/repr.filename]…
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0419] transition time can not be specified for virtual clocks.
-[STA-0450] virtual clock __VIRTUAL_CLK__ can not be propagated.
-Running 'OpenROAD.DumpRCValues' at 'runs/RUN_2026-10-03_20-19-36/10-openroad-dumprcvalues'…
-Logging subprocess to [repr.filename]'runs/RUN_2026-10-03_20-19-36/10-openroad-dumprcvalues/openroad-dumprcvalues.log'[/repr.filename]…
-Running 'Odb.CheckMacroAntennaProperties' at 'runs/RUN_2026-10-03_20-19-36/11-odb-checkmacroantennaproperties'…
-No cells provided, skipping 'Odb.CheckMacroAntennaProperties'…
-Running 'Odb.SetPowerConnections' at 'runs/RUN_2026-10-03_20-19-36/12-odb-setpowerconnections'…
-Logging subprocess to [repr.filename]'runs/RUN_2026-10-03_20-19-36/12-odb-setpowerconnections/odb-setpowerconnections.log'[/repr.filename]…
-Running 'Odb.ManualMacroPlacement' at 'runs/RUN_2026-10-03_20-19-36/13-odb-manualmacroplacement'…
-No instances found, skipping 'Odb.ManualMacroPlacement'…
-Running 'OpenROAD.CutRows' at 'runs/RUN_2026-10-03_20-19-36/14-openroad-cutrows'…
-Logging subprocess to [repr.filename]'runs/RUN_2026-10-03_20-19-36/14-openroad-cutrows/openroad-cutrows.log'[/repr.filename]…
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0419] transition time can not be specified for virtual clocks.
-[STA-0450] virtual clock __VIRTUAL_CLK__ can not be propagated.
-Running 'OpenROAD.TapEndcapInsertion' at 'runs/RUN_2026-10-03_20-19-36/15-openroad-tapendcapinsertion'…
-Logging subprocess to [repr.filename]'runs/RUN_2026-10-03_20-19-36/15-openroad-tapendcapinsertion/openroad-tapendcapinsertion.log'[/repr.filename]…
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0419] transition time can not be specified for virtual clocks.
-[STA-0450] virtual clock __VIRTUAL_CLK__ can not be propagated.
-Running 'Odb.AddPDNObstructions' at 'runs/RUN_2026-10-03_20-19-36/16-odb-addpdnobstructions'…
-'PDN_OBSTRUCTIONS' is not defined. Skipping 'Odb.AddPDNObstructions'…
-Running 'OpenROAD.GeneratePDN' at 'runs/RUN_2026-10-03_20-19-36/17-openroad-generatepdn'…
-'PDN_CFG' not explicitly set, setting it to /nix/store/8y4m6wgn5kqlbig1qwnwbxijqqp0jwib-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/openroad/common/pdn_cfg.tcl…
-Logging subprocess to [repr.filename]'runs/RUN_2026-10-03_20-19-36/17-openroad-generatepdn/openroad-generatepdn.log'[/repr.filename]…
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0366] port '__VIRTUAL_CLK__' not found.
-[STA-0419] transition time can not be specified for virtual clocks.
-[STA-0450] virtual clock __VIRTUAL_CLK__ can not be propagated.
-[PDN-0185] Insufficient width (11.04 um) to add straps on layer met4 in grid "stdcell_grid" with total strap width 4.9 um and offset 16.3 um.
+## Metrics
+design__core__area = 949.661
+design__die__area = 2331.77
+design__instance__area = 949.661
+design__instance__area__class:fill_cell = 247.738
+design__instance__area__class:inverter = 3.7536
+design__instance__area__class:multi_input_combinational_cell = 531.76
+design__instance__area__class:tap_cell = 16.2656
+design__instance__area__class:timing_repair_buffer = 150.144
+design__instance__area__cover = 0
+design__instance__area__macros = 0
+design__instance__area__padcells = 0
+design__instance__area__stdcell = 701.923
+design__instance__count = 163
+design__instance__count__class:fill_cell = 78
+design__instance__count__class:inverter = 1
+design__instance__count__class:multi_input_combinational_cell = 54
+design__instance__count__class:tap_cell = 13
+design__instance__count__class:timing_repair_buffer = 17
+design__instance__count__cover = 0
+design__instance__count__hold_buffer = 0
+design__instance__count__macros = 0
+design__instance__count__padcells = 0
+design__instance__count__setup_buffer = 1
+design__instance__count__stdcell = 85
+design__instance__utilization = 0.73913
+design__instance__utilization__stdcell = 0.73913
+design__lvs_device_difference__count = 0
+design__lvs_error__count = 0
+design__lvs_net_difference__count = 0
+design__lvs_property_fail__count = 0
+design__lvs_unmatched_device__count = 0
+design__lvs_unmatched_net__count = 0
+design__lvs_unmatched_pin__count = 0
+global_route__wirelength = 2208
+klayout__drc_error__count = 0
+magic__drc_error__count = 0
+power__total = 5.323306322679855e-05
+route__drc_errors = 0
+route__drc_errors__iter:0 = 5
+route__drc_errors__iter:1 = 1
+route__drc_errors__iter:2 = 6
+route__drc_errors__iter:3 = 0
+route__wirelength = 1273
+route__wirelength__estimated = 1200.84
+route__wirelength__iter:0 = 1260
+route__wirelength__iter:1 = 1260
+route__wirelength__iter:2 = 1267
+route__wirelength__iter:3 = 1273
+route__wirelength__max = 54.02
+timing__hold__ws = 4.164850804339951
+timing__hold__ws__corner:max_ff_n40C_1v95 = 4.173868480090204
+timing__hold__ws__corner:max_ss_100C_1v60 = 4.990111576306908
+timing__hold__ws__corner:max_tt_025C_1v80 = 4.402837774540121
+timing__hold__ws__corner:min_ff_n40C_1v95 = 4.164850804339951
+timing__hold__ws__corner:min_ss_100C_1v60 = 4.952221439761684
+timing__hold__ws__corner:min_tt_025C_1v80 = 4.38988235965476
+timing__hold__ws__corner:nom_ff_n40C_1v95 = 4.169345875449182
+timing__hold__ws__corner:nom_ss_100C_1v60 = 4.970303420630542
+timing__hold__ws__corner:nom_tt_025C_1v80 = 4.3962750240113495
+timing__hold_vio__count = 0
+timing__hold_vio__count__corner:max_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:max_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:max_tt_025C_1v80 = 0
+timing__hold_vio__count__corner:min_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:min_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:min_tt_025C_1v80 = 0
+timing__hold_vio__count__corner:nom_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:nom_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:nom_tt_025C_1v80 = 0
+timing__setup__ws = -0.006095568666796415
+timing__setup__ws__corner:max_ff_n40C_1v95 = 4.04041611604229
+timing__setup__ws__corner:max_ss_100C_1v60 = -0.006095568666796415
+timing__setup__ws__corner:max_tt_025C_1v80 = 2.867812291035204
+timing__setup__ws__corner:min_ff_n40C_1v95 = 4.059041662119378
+timing__setup__ws__corner:min_ss_100C_1v60 = 0.03642064530826953
+timing__setup__ws__corner:min_tt_025C_1v80 = 2.8947098870581187
+timing__setup__ws__corner:nom_ff_n40C_1v95 = 4.050738970017205
+timing__setup__ws__corner:nom_ss_100C_1v60 = 0.015974777508524014
+timing__setup__ws__corner:nom_tt_025C_1v80 = 2.88239973381292
+timing__setup_vio__count = 1
+timing__setup_vio__count__corner:max_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:max_ss_100C_1v60 = 1
+timing__setup_vio__count__corner:max_tt_025C_1v80 = 0
+timing__setup_vio__count__corner:min_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:min_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:min_tt_025C_1v80 = 0
+timing__setup_vio__count__corner:nom_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:nom_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:nom_tt_025C_1v80 = 0
