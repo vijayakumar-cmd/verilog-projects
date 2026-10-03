@@ -16,7 +16,7 @@ jobs:
       - name: install
         run: pip install librelane gdstk matplotlib
       - name: run flow
-        run: python3 -m librelane --dockerized --docker-no-tty --pdk-root $HOME/.ciel librelane_config.json
+        run: script -qec "python3 -m librelane --dockerized --pdk-root $HOME/.ciel librelane_config.json" /dev/null
       - name: collect
         if: always()
         run: |
