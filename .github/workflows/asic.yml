@@ -15,6 +15,20 @@ jobs:
           python-version: '3.11'
       - name: install
         run: pip install librelane gdstk matplotlib
+      - name: cache pdk
+        uses: actions/cache@v4
+        with:
+          path: ~/.ciel
+          key: ciel-sky130-v1
+      - name: download pdk (with retries)
+        run: |
+          for i in 1 2 3 4 5 6; do
+            if ciel enable --pdk-family sky130 --pdk-root $HOME/.ciel 8afc8346a57fe1ab7934ba5a6056ea8b43078e71; then
+              echo "PDK ready"; break
+            fi
+            echo "PDK download failed (try $i), waiting 30s"; sleep 30
+          done
+          true
       - name: show config
         run: cat librelane_config.json
       - name: run flow
@@ -35,7 +49,6 @@ jobs:
           else:
               r = runs[-1]
               out.append("run: " + os.path.basename(r))
-              # lint messages (the real reason for 'Lint errors found')
               lint = []
               for lf in glob.glob(r + "/*lint*/*.log") + glob.glob(r + "/*/*lint*.log"):
                   for ln in clean(open(lf, errors="ignore").read()).splitlines():
