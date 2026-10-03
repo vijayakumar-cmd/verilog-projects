@@ -89,19 +89,21 @@ jobs:
                       by = {}
                       for p in polys:
                           by.setdefault(p.layer, []).append(p.points)
-                      fig, ax = plt.subplots(figsize=(8, 8), dpi=90)
+                      # big, sharp image: 2400 x 2400 pixels
+                      fig = plt.figure(figsize=(12, 12), dpi=200)
+                      ax = fig.add_axes([0, 0, 1, 1])
                       cols = plt.cm.tab20.colors
                       for l, pts in by.items():
                           ax.add_collection(PolyCollection(pts, facecolor=cols[l % 20],
-                                                           alpha=0.5, linewidths=0))
+                                                           alpha=0.6, linewidths=0))
                       ax.autoscale()
                       ax.set_aspect("equal")
                       ax.axis("off")
-                      for q in (70, 50, 35, 20):
+                      # biggest quality that stays under 450 KB
+                      for q in (88, 80, 70, 60, 50, 40, 30, 20):
                           b = io.BytesIO()
-                          fig.savefig(b, format="jpg", pil_kwargs={"quality": q},
-                                      bbox_inches="tight")
-                          if b.tell() < 60000:
+                          fig.savefig(b, format="jpg", pil_kwargs={"quality": q})
+                          if b.tell() < 450000:
                               break
                       open("results/layout.jpg", "wb").write(b.getvalue())
                   except Exception as e:
