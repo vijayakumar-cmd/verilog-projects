@@ -36,8 +36,8 @@ jobs:
           set +e
           script -qec "python3 -m librelane --dockerized --pdk-root $HOME/.ciel librelane_config.json" /dev/null | tee flow_out.txt
           rc=${PIPESTATUS[0]}
-          if [ $rc -ne 0 ] && { grep -qE "PDN-0185|Insufficient width" flow_out.txt || grep -rqsE "PDN-0185|Insufficient width" runs; }; then
-            echo "design too small for the power grid, retrying with a 60 x 60 um die"
+          if [ $rc -ne 0 ] && { grep -qE "PDN-0185|IFP-0002|Insufficient width" flow_out.txt || grep -rqsE "PDN-0185|IFP-0002|Insufficient width" runs; }; then
+            echo "design too small for its area or power grid, retrying with a 60 x 60 um die"
             python3 -c 'import json; c=json.load(open("librelane_config.json")); c["FP_SIZING"]="absolute"; c["DIE_AREA"]=[0,0,60,60]; json.dump(c, open("librelane_config.json","w"), indent=2)'
             cat librelane_config.json
             rm -rf runs
