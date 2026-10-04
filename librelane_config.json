@@ -1,7 +1,7 @@
 {
-  "DESIGN_NAME": "mux4x1",
+  "DESIGN_NAME": "counterq",
   "VERILOG_FILES": ["dir::counter/src/counter.v", "dir::alu/src/alu.v", "dir::logic_gates/src/logic_gates.v", "dir::seq_detect/src/seq_detect.v", "dir::uart/src/uart_tx.v", "dir::uart/src/uart_rx.v", "dir::uart/src/uart_top.v", "dir::adder/src/adder_subtractor_4bit.v", "dir::srflipflop/src/srflipflop.v", "dir::jkff/src/jkff.v", "dir::dff/src/dff.v", "dir::mux8x1/src/mux8x1.v", "dir::adder/src/adder_subtracter.v", "dir::pipo/src/pipo.v", "dir::siso/src/siso.v", "dir::new_project.v"],
-  "CLOCK_PORT": null,
+  "CLOCK_PORT": "clk",
   "CLOCK_PERIOD": 10,
   "FP_SIZING": "absolute",
   "DIE_AREA": [0, 0, 60, 60],
