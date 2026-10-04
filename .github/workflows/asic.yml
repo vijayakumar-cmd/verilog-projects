@@ -187,8 +187,9 @@ jobs:
                               parts.append('<text x="%d" y="%d" font-size="%d" fill="#ffffff">%s</text>'
                                            % (lx, ly, fs, t.replace("&", "").replace("<", "")))
                           parts.append("</svg>")
-                          data = gzip.compress("".join(parts).encode(), 9)
-                          if len(data) <= 1200000:
+                          raw = "".join(parts).encode()
+                          data = gzip.compress(raw, 9)
+                          if len(data) <= 1200000 and len(raw) <= 8000000:
                               break
                       open("results/layout.svg.gz", "wb").write(data)
                       out.append("")
