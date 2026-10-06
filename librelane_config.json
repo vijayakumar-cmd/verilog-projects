@@ -1,7 +1,9 @@
 {
-  "DESIGN_NAME": "logic_gates",
-  "VERILOG_FILES": ["dir::logicates/src/logicates.v"],
+  "DESIGN_NAME": "mux8x1",
+  "VERILOG_FILES": ["dir::mux8x1/src/mux8x1.v"],
   "CLOCK_PORT": null,
   "CLOCK_PERIOD": 10,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": [0, 0, 60, 60],
   "RUN_LINTER": false
 }
