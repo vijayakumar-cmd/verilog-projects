@@ -1,4 +1,92 @@
 # ASIC result
 
-flow did not start, check the Actions log
-    
+run: RUN_2026-10-06_02-57-16
+
+## Metrics
+design__core__area = 1856.78
+design__die__area = 3600
+design__instance__area = 1856.78
+design__instance__area__class:fill_cell = 1630.31
+design__instance__area__class:inverter = 3.7536
+design__instance__area__class:multi_input_combinational_cell = 72.5696
+design__instance__area__class:tap_cell = 30.0288
+design__instance__area__class:timing_repair_buffer = 120.115
+design__instance__area__cover = 0
+design__instance__area__macros = 0
+design__instance__area__padcells = 0
+design__instance__area__stdcell = 226.467
+design__instance__count = 497
+design__instance__count__class:fill_cell = 454
+design__instance__count__class:inverter = 1
+design__instance__count__class:multi_input_combinational_cell = 6
+design__instance__count__class:tap_cell = 24
+design__instance__count__class:timing_repair_buffer = 12
+design__instance__count__cover = 0
+design__instance__count__hold_buffer = 0
+design__instance__count__macros = 0
+design__instance__count__padcells = 0
+design__instance__count__setup_buffer = 0
+design__instance__count__stdcell = 43
+design__instance__utilization = 0.121968
+design__instance__utilization__stdcell = 0.121968
+design__lvs_device_difference__count = 0
+design__lvs_error__count = 0
+design__lvs_net_difference__count = 0
+design__lvs_property_fail__count = 0
+design__lvs_unmatched_device__count = 0
+design__lvs_unmatched_net__count = 0
+design__lvs_unmatched_pin__count = 0
+global_route__wirelength = 614
+klayout__drc_error__count = 0
+magic__drc_error__count = 0
+power__total = 1.0018894499808084e-05
+route__drc_errors = 0
+route__drc_errors__iter:0 = 2
+route__drc_errors__iter:1 = 0
+route__wirelength = 413
+route__wirelength__estimated = 440.594
+route__wirelength__iter:0 = 414
+route__wirelength__iter:1 = 413
+route__wirelength__max = 39.6
+timing__hold__ws = 4.319011937007276
+timing__hold__ws__corner:max_ff_n40C_1v95 = 4.325532943149141
+timing__hold__ws__corner:max_ss_100C_1v60 = 5.328212688539467
+timing__hold__ws__corner:max_tt_025C_1v80 = 4.604171396679479
+timing__hold__ws__corner:min_ff_n40C_1v95 = 4.319011937007276
+timing__hold__ws__corner:min_ss_100C_1v60 = 5.311887080545239
+timing__hold__ws__corner:min_tt_025C_1v80 = 4.59481532494175
+timing__hold__ws__corner:nom_ff_n40C_1v95 = 4.322436309001278
+timing__hold__ws__corner:nom_ss_100C_1v60 = 5.320919855329054
+timing__hold__ws__corner:nom_tt_025C_1v80 = 4.5998441912963175
+timing__hold_vio__count = 0
+timing__hold_vio__count__corner:max_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:max_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:max_tt_025C_1v80 = 0
+timing__hold_vio__count__corner:min_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:min_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:min_tt_025C_1v80 = 0
+timing__hold_vio__count__corner:nom_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:nom_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:nom_tt_025C_1v80 = 0
+timing__setup__ws = 2.6082239328785786
+timing__setup__ws__corner:max_ff_n40C_1v95 = 4.762429696512756
+timing__setup__ws__corner:max_ss_100C_1v60 = 2.6082239328785786
+timing__setup__ws__corner:max_tt_025C_1v80 = 4.136918480428822
+timing__setup__ws__corner:min_ff_n40C_1v95 = 4.771891017396196
+timing__setup__ws__corner:min_ss_100C_1v60 = 2.6312806012168712
+timing__setup__ws__corner:min_tt_025C_1v80 = 4.150125693903288
+timing__setup__ws__corner:nom_ff_n40C_1v95 = 4.766862151041628
+timing__setup__ws__corner:nom_ss_100C_1v60 = 2.6194935850756713
+timing__setup__ws__corner:nom_tt_025C_1v80 = 4.143513205381606
+timing__setup_vio__count = 0
+timing__setup_vio__count__corner:max_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:max_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:max_tt_025C_1v80 = 0
+timing__setup_vio__count__corner:min_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:min_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:min_tt_025C_1v80 = 0
+timing__setup_vio__count__corner:nom_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:nom_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:nom_tt_025C_1v80 = 0
+
+layout: 60.0 x 60.0 um die, svg 52 KB
