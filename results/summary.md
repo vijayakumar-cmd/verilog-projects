@@ -1,4 +1,88 @@
 # ASIC result
 
-flow did not start, check the Actions log
-    
+run: RUN_2026-10-08_06-11-29
+
+## Metrics
+design__core__area = 1856.78
+design__die__area = 3600
+design__instance__area = 1856.78
+design__instance__area__class:fill_cell = 1789.22
+design__instance__area__class:multi_input_combinational_cell = 7.5072
+design__instance__area__class:tap_cell = 30.0288
+design__instance__area__class:timing_repair_buffer = 30.0288
+design__instance__area__cover = 0
+design__instance__area__macros = 0
+design__instance__area__padcells = 0
+design__instance__area__stdcell = 67.5648
+design__instance__count = 520
+design__instance__count__class:fill_cell = 492
+design__instance__count__class:multi_input_combinational_cell = 1
+design__instance__count__class:tap_cell = 24
+design__instance__count__class:timing_repair_buffer = 3
+design__instance__count__cover = 0
+design__instance__count__hold_buffer = 0
+design__instance__count__macros = 0
+design__instance__count__padcells = 0
+design__instance__count__setup_buffer = 0
+design__instance__count__stdcell = 28
+design__instance__utilization = 0.0363881
+design__instance__utilization__stdcell = 0.0363881
+design__lvs_device_difference__count = 0
+design__lvs_error__count = 0
+design__lvs_net_difference__count = 0
+design__lvs_property_fail__count = 0
+design__lvs_unmatched_device__count = 0
+design__lvs_unmatched_net__count = 0
+design__lvs_unmatched_pin__count = 0
+global_route__wirelength = 117
+klayout__drc_error__count = 0
+magic__drc_error__count = 0
+power__total = 1.9662847989820875e-06
+route__drc_errors = 0
+route__drc_errors__iter:0 = 0
+route__wirelength = 72
+route__wirelength__estimated = 76.001
+route__wirelength__iter:0 = 72
+route__wirelength__max = 32.66
+timing__hold__ws = 4.255267370022579
+timing__hold__ws__corner:max_ff_n40C_1v95 = 4.2591855692319
+timing__hold__ws__corner:max_ss_100C_1v60 = 5.240307891498789
+timing__hold__ws__corner:max_tt_025C_1v80 = 4.5272875618713435
+timing__hold__ws__corner:min_ff_n40C_1v95 = 4.255267370022579
+timing__hold__ws__corner:min_ss_100C_1v60 = 5.228559955209161
+timing__hold__ws__corner:min_tt_025C_1v80 = 4.5217182389331025
+timing__hold__ws__corner:nom_ff_n40C_1v95 = 4.257569084462329
+timing__hold__ws__corner:nom_ss_100C_1v60 = 5.2358114881218905
+timing__hold__ws__corner:nom_tt_025C_1v80 = 4.525064895313182
+timing__hold_vio__count = 0
+timing__hold_vio__count__corner:max_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:max_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:max_tt_025C_1v80 = 0
+timing__hold_vio__count__corner:min_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:min_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:min_tt_025C_1v80 = 0
+timing__hold_vio__count__corner:nom_ff_n40C_1v95 = 0
+timing__hold_vio__count__corner:nom_ss_100C_1v60 = 0
+timing__hold_vio__count__corner:nom_tt_025C_1v80 = 0
+timing__setup__ws = 4.038493209709256
+timing__setup__ws__corner:max_ff_n40C_1v95 = 5.146375027353121
+timing__setup__ws__corner:max_ss_100C_1v60 = 4.038493209709256
+timing__setup__ws__corner:max_tt_025C_1v80 = 4.852902217437408
+timing__setup__ws__corner:min_ff_n40C_1v95 = 5.1516401491740105
+timing__setup__ws__corner:min_ss_100C_1v60 = 4.0468785024067975
+timing__setup__ws__corner:min_tt_025C_1v80 = 4.860092910126666
+timing__setup__ws__corner:nom_ff_n40C_1v95 = 5.148515981494358
+timing__setup__ws__corner:nom_ss_100C_1v60 = 4.0419748692129485
+timing__setup__ws__corner:nom_tt_025C_1v80 = 4.855740835747051
+timing__setup_vio__count = 0
+timing__setup_vio__count__corner:max_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:max_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:max_tt_025C_1v80 = 0
+timing__setup_vio__count__corner:min_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:min_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:min_tt_025C_1v80 = 0
+timing__setup_vio__count__corner:nom_ff_n40C_1v95 = 0
+timing__setup_vio__count__corner:nom_ss_100C_1v60 = 0
+timing__setup_vio__count__corner:nom_tt_025C_1v80 = 0
+
+layout: 60.0 x 60.0 um die, svg 46 KB
